@@ -1,0 +1,49 @@
+<div class="profile-container">
+  <div *ngIf="loading" class="loading-spinner">
+    Loading profile...
+  </div>
+
+  <div *ngIf="error" class="error-message">
+    {{ error }}
+  </div>
+
+  <div *ngIf="profile" class="profile-content">
+    <h1 class="profile-name">{{ profile.name }}</h1>
+    <h2 class="profile-title">{{ profile.title }}</h2>
+    
+    <div class="profile-summary">
+      {{ profile.summary }}
+    </div>
+
+    <div class="profile-contact">
+      <div class="contact-item" *ngIf="profile.phone">
+        <i class="fas fa-phone"></i>
+        <span>{{ profile.phone }}</span>
+      </div>
+      <div class="contact-item" *ngIf="profile.email">
+        <i class="fas fa-envelope"></i>
+        <span>{{ profile.email }}</span>
+      </div>
+      <div class="contact-item" *ngIf="profile.location">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>{{ profile.location }}</span>
+      </div>
+      <div class="contact-item" *ngIf="profile.website">
+        <i class="fas fa-globe"></i>
+        <span>{{ profile.website }}</span>
+      </div>
+    </div>
+
+    <div class="social-links" *ngIf="profile.socialLinks">
+      <a *ngIf="profile.socialLinks.linkedin" [href]="profile.socialLinks.linkedin" target="_blank" class="social-link">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a *ngIf="profile.socialLinks.github" [href]="profile.socialLinks.github" target="_blank" class="social-link">
+        <i class="fab fa-github"></i>
+      </a>
+      <a *ngIf="profile.socialLinks.twitter" [href]="profile.socialLinks.twitter" target="_blank" class="social-link">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </div>
+  </div>
+</div> 

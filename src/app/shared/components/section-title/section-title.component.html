@@ -1,0 +1,17 @@
+<div class="title-container">
+  <div class="icon-container">
+    <app-icon [name]="icon" [isRightSide]="isRightSide"></app-icon>
+  </div>
+  <h2 class="title" [ngClass]="{'right-side-title': isRightSide}">{{ title }}</h2>
+  <svg xmlns="http://www.w3.org/2000/svg"
+       width="32" height="32"
+       [attr.fill]="isRightSide ? '#ffffff' : '#000000'"
+       class="bi bi-chevron-up sidebar-svg show-hide-main icon-action"
+       [ngClass]="{'rotate-180': !isVisible}"
+       (click)="toggle()"
+       viewBox="0 0 16 16">
+    <path fill-rule="evenodd"
+          d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
+  </svg>
+</div>
+

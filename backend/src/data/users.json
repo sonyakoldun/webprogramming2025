@@ -1,0 +1,208 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "john_doe",
+      "email": "john@example.com",
+      "password": "password123",
+      "role": "admin",
+      "profile": {
+        "name": "John Doe",
+        "title": "Senior Full Stack Developer",
+        "summary": "Experienced developer with a passion for creating beautiful and functional web applications.",
+        "location": "New York, NY",
+        "phone": "+1-555-0123",
+        "website": "johndoe.dev",
+        "socialLinks": {
+          "linkedin": "https://linkedin.com/in/johndoe",
+          "github": "https://github.com/johndoe",
+          "twitter": "https://twitter.com/johndoe"
+        }
+      },
+      "experience": [
+        {
+          "id": "1",
+          "title": "Senior Full Stack Developer",
+          "period": "2020 - Present",
+          "location": "Tech Corp / New York",
+          "description": "Leading development of enterprise web applications using Angular and Node.js",
+          "order": 1
+        },
+        {
+          "id": "2",
+          "title": "Full Stack Developer",
+          "period": "2018 - 2020",
+          "location": "Web Solutions / Boston",
+          "description": "Developed and maintained multiple client projects using modern web technologies",
+          "order": 2
+        }
+      ],
+      "education": [
+        {
+          "id": "1",
+          "degree": "Master of Computer Science",
+          "institution": "MIT",
+          "period": "2016 - 2018",
+          "location": "Cambridge, MA",
+          "description": "Specialized in Software Engineering and Web Technologies",
+          "order": 1
+        },
+        {
+          "id": "2",
+          "degree": "Bachelor of Science in Computer Science",
+          "institution": "Stanford University",
+          "period": "2012 - 2016",
+          "location": "Stanford, CA",
+          "order": 2
+        }
+      ],
+      "skills": [
+        {
+          "id": "1",
+          "category": "Frontend",
+          "skills": [
+            {
+              "name": "Angular",
+              "level": 90
+            },
+            {
+              "name": "React",
+              "level": 85
+            },
+            {
+              "name": "TypeScript",
+              "level": 95
+            }
+          ],
+          "order": 1
+        },
+        {
+          "id": "2",
+          "category": "Backend",
+          "skills": [
+            {
+              "name": "Node.js",
+              "level": 90
+            },
+            {
+              "name": "Express",
+              "level": 85
+            },
+            {
+              "name": "MongoDB",
+              "level": 80
+            }
+          ],
+          "order": 2
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "username": "jane_smith",
+      "email": "jane@example.com",
+      "password": "password123",
+      "role": "user",
+      "profile": {
+        "name": "Jane Smith",
+        "title": "UI/UX Designer",
+        "summary": "Creative designer focused on creating intuitive and engaging user experiences.",
+        "location": "San Francisco, CA",
+        "phone": "+1-555-0124",
+        "website": "janesmith.design",
+        "socialLinks": {
+          "linkedin": "https://linkedin.com/in/janesmith",
+          "github": "https://github.com/janesmith",
+          "twitter": "https://twitter.com/janesmith"
+        }
+      },
+      "experience": [
+        {
+          "id": "1",
+          "title": "Senior UI/UX Designer",
+          "period": "2019 - Present",
+          "location": "Design Studio / San Francisco",
+          "description": "Leading design initiatives for enterprise clients",
+          "order": 1
+        }
+      ],
+      "education": [
+        {
+          "id": "1",
+          "degree": "Bachelor of Fine Arts in Design",
+          "institution": "California College of the Arts",
+          "period": "2015 - 2019",
+          "location": "San Francisco, CA",
+          "order": 1
+        }
+      ],
+      "skills": [
+        {
+          "id": "1",
+          "category": "Design",
+          "skills": [
+            {
+              "name": "Figma",
+              "level": 95
+            },
+            {
+              "name": "Adobe XD",
+              "level": 90
+            },
+            {
+              "name": "Photoshop",
+              "level": 85
+            }
+          ],
+          "order": 1
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "username": "test",
+      "email": "test@gmail.com",
+      "password": "$2b$10$Eir/FhIzTMZKznvyg2hr8.3iVnOfWLnWBARMQ0VV9/QiU3dNo0I3K",
+      "role": "user",
+      "profile": {
+        "name": "test",
+        "title": "",
+        "summary": "",
+        "location": "",
+        "phone": "",
+        "website": "",
+        "socialLinks": {
+          "linkedin": "",
+          "github": "",
+          "twitter": ""
+        }
+      },
+      "experience": [],
+      "education": [],
+      "skills": []
+    },
+    {
+      "id": "4",
+      "username": "Sonya Koldun",
+      "email": "sofiko3007@gmail.com",
+      "password": "$2b$10$KLEGxXWZ7L5GwblqSLkJzum7GR8AGmEHt4wOS0WGCxG7TmihDsC.G",
+      "role": "user",
+      "profile": {
+        "name": "Sonya Koldun",
+        "title": "",
+        "summary": "",
+        "location": "",
+        "phone": "",
+        "website": "",
+        "socialLinks": {
+          "linkedin": "",
+          "github": "",
+          "twitter": ""
+        }
+      },
+      "experience": [],
+      "education": [],
+      "skills": []
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+<div class="contact-container">
+    <app-section-title
+      icon="contact"
+      title="Contact Me"
+      [isVisible]="isContactVisible"
+      [isRightSide]="true"
+      (toggleVisibility)="toggleContact()">
+    </app-section-title>
+  <ul class="contact-list" [ngClass]="{'d-none': !isContactVisible}">
+    <li>
+      <div class="contact-item">
+        <svg width="14" height="24" class="white-fill">
+          <use href="./assets/svg/symbol-defs.svg#icon-tel"></use>
+        </svg>
+        <p class="contact-item-text">+1-718-310-5588</p>
+      </div>
+    </li>
+    <li>
+      <div class="contact-item">
+        <svg width="23" height="24" class="white-fill">
+          <use href="./assets/svg/symbol-defs.svg#icon-Web"></use>
+        </svg>
+        <p class="contact-item-text">www.yourwebsite.com</p>
+      </div>
+    </li>
+    <li>
+      <div class="contact-item">
+        <svg width="16" height="24" class="white-fill">
+          <use href="./assets/svg/symbol-defs.svg#icon-Location"></use>
+        </svg>
+        <p class="contact-item-text">769 PrudenceLincoln Park, MI</p>
+      </div>
+    </li>
+  </ul>
+</div>

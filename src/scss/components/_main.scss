@@ -1,0 +1,35 @@
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 0;
+  flex-grow: 1;
+}
+
+.right-side {
+  overflow: visible;
+  max-width: 400px;
+  background-color: var(--primary-text-color);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: flex-start;
+  gap: 48px;
+  margin-right: 96px;
+
+  & > :last-child {
+    margin-bottom: 24px;
+  }
+}
+
+.main-img {
+  z-index: 1;
+  @include border-radius(100%);
+  aspect-ratio: 4 / 4;
+  margin-top: -60%;
+  min-width: clamp(460px, 100%, 680px);
+  position: relative;
+  left: -10%;
+  right: -10%;
+}

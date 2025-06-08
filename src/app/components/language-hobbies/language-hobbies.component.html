@@ -1,0 +1,48 @@
+<section>
+  <div class="container language-hobbies-container">
+    <ul class="language-hobbies">
+      <li>
+        <div class="title-container">
+          <app-section-title 
+            icon="language" 
+            title="Language" 
+            [isVisible]="isLanguageVisible" 
+            (toggleVisibility)="toggleLanguage()">
+          </app-section-title>
+        </div>
+        <ul class="language-list" [ngClass]="{'d-none': !isLanguageVisible}">
+          <li>
+            <div class="language-list-item" *ngFor="let lang of languages.slice(0, 2)">
+              <div class="dot"></div>
+              <p class="language-list-item-name">{{ lang.name }}</p>
+            </div>
+          </li>
+          <li>
+            <div class="language-list-item" *ngFor="let lang of languages.slice(2, 4)">
+              <div class="dot"></div>
+              <p class="language-list-item-name">{{ lang.name }}</p>
+            </div>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <div class="title-container">
+          <app-section-title 
+            icon="hobbies" 
+            title="Hobbies" 
+            [isVisible]="isHobbiesVisible" 
+            (toggleVisibility)="toggleHobbies()">
+          </app-section-title>
+        </div>
+        <ul class="hobbies-list" [ngClass]="{'d-none': !isHobbiesVisible}">
+          <li *ngFor="let hobby of hobbies">
+            <div class="language-list-item">
+              <div class="dot"></div>
+              <p class="language-list-item-name">{{ hobby.name }}</p>
+            </div>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</section>

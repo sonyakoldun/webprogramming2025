@@ -1,0 +1,22 @@
+<div class="contact-container">
+    <app-section-title
+      icon="education"
+      title="Education"
+      [isVisible]="isEducationVisible"
+      [isRightSide]="true"
+      (toggleVisibility)="toggleEducation()">
+    </app-section-title>
+  <ul [ngClass]="{'d-none': !isEducationVisible}">
+    <li *ngFor="let edu of education">
+      <p class="education-item-name">{{ edu.institution }}</p>
+      <ul>
+        <li>
+          <p class="education-item-text">{{ edu.degree }}</p>
+        </li>
+        <li>
+          <p class="education-item-text">{{ edu.period }}</p>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>

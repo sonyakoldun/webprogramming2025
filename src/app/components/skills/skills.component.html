@@ -1,0 +1,32 @@
+<section>
+  <div class="skills-container">
+    <div class="title-container skills-title-container">
+      <app-section-title 
+        icon="skills" 
+        title="Skills" 
+        [isVisible]="isSkillsVisible" 
+        (toggleVisibility)="toggleSkills()">
+      </app-section-title>
+    </div>
+    <div class="skills-items-container" [ngClass]="{'d-none': !isSkillsVisible}">
+      <ul>
+        <li class="skils-item" *ngFor="let skill of skillsLeft">
+          <p class="skills-name">{{ skill.name }}</p>
+          <div class="progress-bar">
+            <div class="bar"></div>
+            <div class="line" [style.width.px]="skill.level * 0.84"></div>
+          </div>
+        </li>
+      </ul>
+      <ul>
+        <li class="skils-item" *ngFor="let skill of skillsRight">
+          <p class="skills-name">{{ skill.name }}</p>
+          <div class="progress-bar">
+            <div class="bar"></div>
+            <div class="line" [style.width.px]="skill.level * 0.84"></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

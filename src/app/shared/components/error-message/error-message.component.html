@@ -1,0 +1,6 @@
+<div *ngIf="isVisible" class="error-message">
+  <div class="error-content">
+    <span>{{ message }}</span>
+    <button *ngIf="showClose" class="close-btn" (click)="closeMessage()">×</button>
+  </div>
+</div>

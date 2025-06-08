@@ -1,0 +1,29 @@
+<nav class="navbar">
+  <div class="container">
+    <div class="navbar-brand">
+      <a routerLink="/">Resume App</a>
+    </div>
+    <div class="navbar-menu">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+        </li>
+        <li class="nav-item" *ngIf="authService.isLoggedIn$ | async">
+          <a routerLink="/profile" routerLinkActive="active">Profile</a>
+        </li>
+        <li class="nav-item" *ngIf="authService.isLoggedIn$ | async">
+          <a routerLink="/forms" routerLinkActive="active">Forms</a>
+        </li>
+        <li class="nav-item" *ngIf="!(authService.isLoggedIn$ | async)">
+          <a routerLink="/auth/login" routerLinkActive="active">Login</a>
+        </li>
+        <li class="nav-item" *ngIf="!(authService.isLoggedIn$ | async)">
+          <a routerLink="/auth/register" routerLinkActive="active">Register</a>
+        </li>
+        <li class="nav-item" *ngIf="authService.isLoggedIn$ | async">
+          <a href="javascript:void(0)" (click)="logout()">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

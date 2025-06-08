@@ -1,0 +1,56 @@
+.experience-container {
+  margin-bottom: 2rem;
+}
+
+.experience-list {
+  margin-top: 1rem;
+}
+
+.loading-spinner {
+  text-align: center;
+  padding: 1rem;
+  color: #666;
+}
+
+.error-message {
+  color: #dc3545;
+  padding: 1rem;
+  text-align: center;
+  background-color: #f8d7da;
+  border-radius: 4px;
+  margin: 1rem 0;
+}
+
+.experience-item {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.experience-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+}
+
+.experience-details {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.experience-description {
+  color: #495057;
+  line-height: 1.5;
+  margin: 0;
+} 

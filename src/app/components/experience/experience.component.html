@@ -1,0 +1,20 @@
+<section>
+  <div class="experience-title-container">
+    <app-section-title
+      icon="experience"
+      title="Job Experience"
+      [isVisible]="isExperienceVisible"
+      (toggleVisibility)="toggleExperience()">
+    </app-section-title>
+  </div>
+  <ul [ngClass]="{'d-none': !isExperienceVisible}">
+    <li *ngFor="let exp of experiences">
+      <div class="experience-item-container">
+        <p class="experience-item-name">{{ exp.title }}</p>
+        <p class="experience-item-date">{{ exp.period }}</p>
+      </div>
+      <p class="experience-item-location">{{ exp.location }}</p>
+      <p class="experience-item-text">{{ exp.description }}</p>
+    </li>
+  </ul>
+</section>

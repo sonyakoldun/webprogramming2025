@@ -1,0 +1,161 @@
+<div class="form-container">
+  <h2>Subscribe to Our Service</h2>
+  <p class="form-description">Use this reactive form to subscribe to our service</p>
+  
+  <app-error-message *ngIf="errorMessage" [message]="errorMessage"></app-error-message>
+  
+  <div *ngIf="successMessage" class="success-message">
+    <div class="success-content">
+      <span>{{ successMessage }}</span>
+    </div>
+  </div>
+  
+  <form [formGroup]="subscriptionForm" (ngSubmit)="onSubmit()">
+    <div formGroupName="personalInfo" class="form-section">
+      <h3>Personal Information</h3>
+      
+      <div class="form-row">
+        <div class="form-group">
+          <label for="firstName">First Name *</label>
+          <input 
+            type="text" 
+            id="firstName" 
+            formControlName="firstName"
+            placeholder="Enter your first name"
+          >
+          <div class="error-text" *ngIf="personalInfo.get('firstName')?.invalid && (personalInfo.get('firstName')?.dirty || personalInfo.get('firstName')?.touched)">
+            <span *ngIf="personalInfo.get('firstName')?.errors?.['required']">First name is required</span>
+            <span *ngIf="personalInfo.get('firstName')?.errors?.['minlength']">
+              First name must be at least 2 characters
+            </span>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="lastName">Last Name *</label>
+          <input 
+            type="text" 
+            id="lastName" 
+            formControlName="lastName"
+            placeholder="Enter your last name"
+          >
+          <div class="error-text" *ngIf="personalInfo.get('lastName')?.invalid && (personalInfo.get('lastName')?.dirty || personalInfo.get('lastName')?.touched)">
+            <span *ngIf="personalInfo.get('lastName')?.errors?.['required']">Last name is required</span>
+            <span *ngIf="personalInfo.get('lastName')?.errors?.['minlength']">
+              Last name must be at least 2 characters
+            </span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="email">Email *</label>
+        <input 
+          type="email" 
+          id="email" 
+          formControlName="email"
+          placeholder="Enter your email"
+        >
+        <div class="error-text" *ngIf="personalInfo.get('email')?.invalid && (personalInfo.get('email')?.dirty || personalInfo.get('email')?.touched)">
+          <span *ngIf="personalInfo.get('email')?.errors?.['required']">Email is required</span>
+          <span *ngIf="personalInfo.get('email')?.errors?.['email']">Please enter a valid email</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="form-section">
+      <h3>Subscription Plan</h3>
+      
+      <div class="plan-options">
+        <div *ngFor="let plan of plans" class="plan-option">
+          <input 
+            type="radio" 
+            [id]="plan.id" 
+            formControlName="plan"
+            [value]="plan.id"
+          >
+          <label [for]="plan.id" class="plan-label">
+            <span class="plan-name">{{ plan.name }}</span>
+            <span class="plan-price">${{ plan.price }}/month</span>
+          </label>
+        </div>
+      </div>
+    </div>
+    
+    <div formGroupName="paymentInfo" class="form-section">
+      <h3>Payment Information</h3>
+      
+      <div class="form-group">
+        <label for="cardNumber">Card Number *</label>
+        <input 
+          type="text" 
+          id="cardNumber" 
+          formControlName="cardNumber"
+          placeholder="Enter your 16-digit card number"
+          maxlength="16"
+        >
+        <div class="error-text" *ngIf="paymentInfo.get('cardNumber')?.invalid && (paymentInfo.get('cardNumber')?.dirty || paymentInfo.get('cardNumber')?.touched)">
+          <span *ngIf="paymentInfo.get('cardNumber')?.errors?.['required']">Card number is required</span>
+          <span *ngIf="paymentInfo.get('cardNumber')?.errors?.['pattern']">
+            Please enter a valid 16-digit card number
+          </span>
+        </div>
+      </div>
+      
+      <div class="form-row">
+        <div class="form-group">
+          <label for="expiryDate">Expiry Date (MM/YY) *</label>
+          <input 
+            type="text" 
+            id="expiryDate" 
+            formControlName="expiryDate"
+            placeholder="MM/YY"
+            maxlength="5"
+          >
+          <div class="error-text" *ngIf="paymentInfo.get('expiryDate')?.invalid && (paymentInfo.get('expiryDate')?.dirty || paymentInfo.get('expiryDate')?.touched)">
+            <span *ngIf="paymentInfo.get('expiryDate')?.errors?.['required']">Expiry date is required</span>
+            <span *ngIf="paymentInfo.get('expiryDate')?.errors?.['pattern']">
+              Please enter a valid expiry date (MM/YY)
+            </span>
+            <span *ngIf="paymentInfo.get('expiryDate')?.errors?.['expired']">
+              Card has expired
+            </span>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="cvv">CVV *</label>
+          <input 
+            type="text" 
+            id="cvv" 
+            formControlName="cvv"
+            placeholder="CVV"
+            maxlength="4"
+          >
+          <div class="error-text" *ngIf="paymentInfo.get('cvv')?.invalid && (paymentInfo.get('cvv')?.dirty || paymentInfo.get('cvv')?.touched)">
+            <span *ngIf="paymentInfo.get('cvv')?.errors?.['required']">CVV is required</span>
+            <span *ngIf="paymentInfo.get('cvv')?.errors?.['pattern']">
+              Please enter a valid CVV (3-4 digits)
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="form-group terms-group">
+      <div class="checkbox-container">
+        <input type="checkbox" id="terms" formControlName="terms">
+        <label for="terms">I agree to the Terms and Conditions *</label>
+      </div>
+      <div class="error-text" *ngIf="subscriptionForm.get('terms')?.invalid && (subscriptionForm.get('terms')?.dirty || subscriptionForm.get('terms')?.touched)">
+        <span *ngIf="subscriptionForm.get('terms')?.errors?.['required']">
+          You must agree to the terms and conditions
+        </span>
+      </div>
+    </div>
+    
+    <div class="form-actions">
+      <button type="submit" [disabled]="subscriptionForm.invalid" class="btn-primary">Subscribe Now</button>
+    </div>
+  </form>
+</div>

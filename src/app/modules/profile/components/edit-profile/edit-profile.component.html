@@ -1,0 +1,95 @@
+<div class="edit-profile">
+  <h2>Edit Profile</h2>
+  
+  <app-error-message *ngIf="errorMessage" [message]="errorMessage"></app-error-message>
+  
+  <div *ngIf="successMessage" class="success-message">
+    <div class="success-content">
+      <span>{{ successMessage }}</span>
+    </div>
+  </div>
+  
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input 
+        type="text" 
+        id="name" 
+        formControlName="name"
+        placeholder="Enter your name"
+      >
+      <div class="error-text" *ngIf="profileForm.get('name')?.invalid && profileForm.get('name')?.touched">
+        <span *ngIf="profileForm.get('name')?.errors?.['required']">Name is required</span>
+        <span *ngIf="profileForm.get('name')?.errors?.['minlength']">
+          Name must be at least 3 characters
+        </span>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input 
+        type="email" 
+        id="email" 
+        formControlName="email"
+        placeholder="Enter your email"
+      >
+      <div class="error-text" *ngIf="profileForm.get('email')?.invalid && profileForm.get('email')?.touched">
+        <span *ngIf="profileForm.get('email')?.errors?.['required']">Email is required</span>
+        <span *ngIf="profileForm.get('email')?.errors?.['email']">Please enter a valid email</span>
+      </div>
+    </div>
+    
+    <div class="form-section">
+      <h3>Change Password</h3>
+      
+      <div class="form-group">
+        <label for="currentPassword">Current Password</label>
+        <input 
+          type="password" 
+          id="currentPassword" 
+          formControlName="currentPassword"
+          placeholder="Enter your current password"
+        >
+        <div class="error-text" *ngIf="profileForm.get('currentPassword')?.invalid && profileForm.get('currentPassword')?.touched">
+          <span *ngIf="profileForm.get('currentPassword')?.errors?.['required']">
+            Current password is required
+          </span>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="newPassword">New Password (leave blank to keep current)</label>
+        <input 
+          type="password" 
+          id="newPassword" 
+          formControlName="newPassword"
+          placeholder="Enter new password"
+        >
+        <div class="error-text" *ngIf="profileForm.get('newPassword')?.invalid && profileForm.get('newPassword')?.touched">
+          <span *ngIf="profileForm.get('newPassword')?.errors?.['minlength']">
+            New password must be at least 6 characters
+          </span>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="confirmPassword">Confirm New Password</label>
+        <input 
+          type="password" 
+          id="confirmPassword" 
+          formControlName="confirmPassword"
+          placeholder="Confirm new password"
+        >
+        <div class="error-text" *ngIf="profileForm.errors?.['passwordMismatch'] && profileForm.get('confirmPassword')?.touched">
+          Passwords do not match
+        </div>
+      </div>
+    </div>
+    
+    <div class="form-actions">
+      <button type="button" (click)="editComplete.emit()" class="btn-secondary">Cancel</button>
+      <button type="submit" [disabled]="profileForm.invalid" class="btn-primary">Save Changes</button>
+    </div>
+  </form>
+</div>

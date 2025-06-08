@@ -1,0 +1,52 @@
+.experience-container {
+  margin-top: 120px;
+  width: 816px;
+}
+
+.experience-title-container {
+  justify-content: flex-start!important;
+  flex-basis: min-content!important;
+  .title-container{
+    justify-content: flex-start!important;
+    flex-basis: min-content!important;
+  }
+}
+
+.experience-item-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.experience-item-name {
+  font-size: 28px;
+  text-transform: uppercase;
+  color: var(--primary-text-color);
+  font-weight: 800;
+}
+
+.experience-item-date {
+  font-size: 24px;
+  color: var(--primary-text-color);
+  font-weight: bold;
+  text-align: right;
+}
+
+.experience-item-location {
+  font-size: 24px;
+  color: var(--primary-text-color);
+  font-weight: 500;
+  font-style: italic;
+  margin-bottom: 33px;
+}
+
+.experience-item-text {
+  width: 660px;
+  height: 56px;
+  font-size: 22px;
+  line-height: 34px;
+  color: var(--primary-text-color);
+  margin-bottom: 58px;
+}

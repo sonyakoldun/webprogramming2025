@@ -1,0 +1,37 @@
+<div class="profile-container">
+  <div class="profile-header">
+    <h1>My Profile</h1>
+    <button (click)="toggleEdit()" class="btn-secondary">
+      {{ isEditing ? 'Cancel' : 'Edit Profile' }}
+    </button>
+  </div>
+  
+  <div class="profile-content">
+    <div *ngIf="!isEditing" class="profile-info">
+      <div class="profile-avatar">
+        <div class="avatar-placeholder">
+          {{ user?.name?.charAt(0) || 'U' }}
+        </div>
+      </div>
+      
+      <div class="profile-details">
+        <div class="detail-item">
+          <span class="detail-label">Name:</span>
+          <span class="detail-value">{{ user?.name || 'Not provided' }}</span>
+        </div>
+        
+        <div class="detail-item">
+          <span class="detail-label">Email:</span>
+          <span class="detail-value">{{ user?.email || 'Not provided' }}</span>
+        </div>
+        
+        <div class="detail-item">
+          <span class="detail-label">Account ID:</span>
+          <span class="detail-value">{{ user?.id || 'Not available' }}</span>
+        </div>
+      </div>
+    </div>
+    
+    <app-edit-profile *ngIf="isEditing" [user]="user" (editComplete)="toggleEdit()"></app-edit-profile>
+  </div>
+</div>

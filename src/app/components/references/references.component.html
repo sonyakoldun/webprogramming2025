@@ -1,0 +1,27 @@
+<div class="contact-container">
+  <div class="title-container">
+    <app-section-title 
+      icon="reference" 
+      title="References" 
+      [isVisible]="isReferencesVisible" 
+      [isRightSide]="true"
+      (toggleVisibility)="toggleReferences()">
+    </app-section-title>
+  </div>
+  <ul [ngClass]="{'d-none': !isReferencesVisible}">
+    <li *ngFor="let ref of references">
+      <p class="reference-item-name">{{ ref.name }}</p>
+      <ul class="reference-item-text-list">
+        <li>
+          <p class="reference-item-text">{{ ref.address }}</p>
+        </li>
+        <li>
+          <p class="reference-item-text">Tel: {{ ref.phone }}</p>
+        </li>
+        <li>
+          <p class="reference-item-text">Email: {{ ref.email }}</p>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
